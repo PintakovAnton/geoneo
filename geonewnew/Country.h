@@ -17,17 +17,21 @@ class Country
 private:
 	std::string name;
 	Continent continent;
+	std::string currency;
 	City* capital;
 	City* head;
 public:
-	Country(std::string name, Continent continent)
+	Country(std::string name, Continent continent, std::string currency)
 	{
 		this->name = name;
+		this->currency = currency;
 		head = nullptr;
 		capital = nullptr;
 		this->continent = continent;
+		
 	};
 	bool isEmpty() { return head == nullptr; };
+	std::string getCurrency() { return this->currency; };
 	City* add(std::string name, double population, bool isCapital, City* node = nullptr)
 	{
 

@@ -12,12 +12,12 @@ int main()
     std::vector<Country> arrayOfCountris;
     
     int i = 0;
-    arrayOfCountris.push_back(Country("Россия", Eurasia)); // Вот это делать в цикле по счетчику
+    arrayOfCountris.push_back(Country("Россия", Eurasia, "RU")); // Вот это делать в цикле по счетчику
     arrayOfCountris[i].add("Комсомольск", 300000, false); 
       arrayOfCountris[i].add("Москва", 30000000, true);
       arrayOfCountris[i].add("Тамбов", 300000, false);
   
-    arrayOfCountris.push_back(Country("Сша", Eurasia));
+    arrayOfCountris.push_back(Country("Сша", Eurasia, "$"));
     i++;
     arrayOfCountris[i].add("Орск", 300000, false);
     arrayOfCountris[i].add("Холмск", 300000, false);
@@ -25,7 +25,9 @@ int main()
     for (Country item : arrayOfCountris)
     {
         std::cout << item.getName() << std::endl;
+        std::cout << "Валюта " << item.getCurrency() << std::endl;
         City* capital = item.getCapital();
+
         std::cout << "Столица" << std::endl;
         std::cout << capital->name << std::endl;
         std::cout << "Население " << capital->population << std::endl;
